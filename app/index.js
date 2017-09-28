@@ -1,10 +1,18 @@
 const express = require('express')
 const App = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
+var HotelController = require('../app/controllers/HotelController.js')
+
+App.use(express.static(__dirname + '/../public'))
+
+App.get('/hotels', function (req, res) {
+	res.json(HotelController.getHotels())
 })
 
-app.listen(3000, function () {
-  console.log('Hotels App listening on port 3000')
+App.get('*', function(req, res) {
+    res.redirect('/');
+});
+
+App.listen(3000, function () {
+	console.log('Hotels App listening on port 3000')
 })
