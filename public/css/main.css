@@ -97,15 +97,72 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html{
+    background-color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hotels-app-main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+    padding: 20px 40px;
+}
+
+.hotels-app-main .modifiers-container{
+    border-bottom: 1px solid gray;
+    padding: 20px;
+}
+
+.hotels-app-main .modifiers-title{
+    text-align: center;
+    color: dodgerblue;
+}
+
+.hotels-app-main .modifiers-title:hover{
+    cursor: pointer;
+}
+
+.hotels-app-main .modifiers-content{
+
+}
 
 
+.hotels-app-main .hotel-item-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 17px;
+    background-color: white;
+    box-shadow: 2px 2px 3px #888888;
+    padding: 10px;
+}
 
+.hotels-app-main .order-hotels{
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.hotels-app-main .hotel-item-container .hotel-description span,
+.hotels-app-main .hotel-item-container .hotel-price span{
+    display: block;
+}
 
+.hotels-app-main .hotel-item-container .hotel-price{
+    text-align: center;
+    border-left: 1px dashed black;
+}
 
+.hotels-app-main .hotel-item-container .warning-text{
+    color: darkorange;
+}
 
+.hotels-app-main .hotel-item-container .price-text{
+    font-size: 20px;
+}
 
-
+.hotels-app-main .hotel-item-container .price-text strong{
+    font-size: 2em;
+}
 
 
 
@@ -205,87 +262,4 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }

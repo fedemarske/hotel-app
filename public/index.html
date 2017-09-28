@@ -7,11 +7,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -19,7 +22,65 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="hotels-app-main">
+            <div class="search-modify-container modifiers-container">
+                <div class="modifiers-title">
+                    <span>Modificar Busqueda</span>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+                <div class="modifiers-content">
+
+                </div>
+            </div>
+            <div class="map-container modifiers-container">
+                <div class="modifiers-title">
+                    <span>Ver hoteles en el mapa</span>
+                </div>
+            </div>
+            <div class="filter-container modifiers-container">
+                <div class="modifiers-title">
+                    <span>Filtrar</span>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+                <div class="modifiers-content">
+
+                </div>
+            </div>
+            <div class="list-hotels-container">
+                <div class="order-hotels">
+                    <label>Ordenar</label>
+                    <select>
+                        <option>Mas recientes</option>
+                    </select>
+                </div>
+                <div class="hotel-item-container">
+                    <div class="carousel-images-hotel">
+                        <img src="http://via.placeholder.com/250x200" alt="" />
+                    </div>
+                    <div class="hotel-description">
+                        <span><strong>Sarasa</strong></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span class="warning-text"><i class="fa fa-bed" aria-hidden="true"></i> Solo la habitacion</span>
+                        <span>
+                            <i class="fa fa-glass" aria-hidden="true"></i>
+                            <i class="fa fa-umbrella" aria-hidden="true"></i>
+                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                            <i class="fa fa-coffee" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="hotel-price">
+                        <span>Precio por noche por la habitacion</span>
+                        <span class="warning-text price-text">ARS <strong>1540</strong></span>
+                        <span>Impuestos y tasas no incluidos</span>
+                        <button>Ver Hotel</button>
+                        <span>Paga en cuotas</span>
+                        <span>Paga en destino</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
