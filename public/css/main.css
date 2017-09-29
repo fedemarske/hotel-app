@@ -105,18 +105,19 @@ html{
 .hotels-app-main{
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: 20px;
+    grid-gap: 15px;
     padding: 20px 40px;
 }
 
 .hotels-app-main .modifiers-container{
     border-bottom: 1px solid gray;
-    padding: 20px;
+    padding: 10px 0px;
 }
 
 .hotels-app-main .modifiers-title{
     text-align: center;
     color: dodgerblue;
+    margin-bottom: 10px;
 }
 
 .hotels-app-main .modifiers-title:hover{
@@ -124,22 +125,63 @@ html{
 }
 
 .hotels-app-main .modifiers-content{
-
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
 }
 
+.hotels-app-main .modifiers-content{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+    font-size: 20px;
+}
+
+.hotels-app-main .filter-container{
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: white;
+    padding: 20px;
+}
+
+.hotels-app-main .filter-container .filter-title,
+.hotels-app-main .filter-container .filter-title .fa-star{
+    color: #0b7dd4;
+}
+
+.hotels-app-main .filter-container .slider-price{
+    width: 100%
+}
+
+.hotels-app-main .filter-content .stars-list{
+    list-style-type: none;
+    padding: 5px;
+}
+
+.hotels-app-main .list-hotels{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
 
 .hotels-app-main .hotel-item-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr;
     font-size: 17px;
     background-color: white;
     box-shadow: 2px 2px 3px #888888;
     padding: 10px;
+    grid-gap: 20px;
 }
 
 .hotels-app-main .order-hotels{
     text-align: center;
     margin-bottom: 20px;
+}
+
+.hotels-app-main .order-hotels select{
+    padding: 10px;
+    background: white;
 }
 
 .hotels-app-main .hotel-item-container .hotel-description span,
@@ -164,10 +206,65 @@ html{
     font-size: 2em;
 }
 
+button.btn-primary{
+    background-color: #0d265f;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    margin: 10px 0px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button.btn-primary.btn-lg{
+    width: 90%;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input.hotel-search-input{
+    height: 15px;
+    padding: 10px;
+    width: 80%;
+}
+
+.fa-star{
+    color: #fdfd0c;
+}
 
 
 
+@media only screen and (min-width : 1200px) {
+    .hotels-app-main{
+        grid-template-columns: 1fr 3fr;
+    }
 
+    .hotels-app-main .order-hotels{
+        text-align: right;
+        margin-bottom: 8px;
+    }
+
+    .hotels-app-main .modifiers-title{
+        text-align: left;
+        color: black;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .hotels-app-main .modifiers-title .fa-caret-down{
+        display: none;
+    }
+
+    .hotels-app-main .modifiers-container{
+        border-bottom: none;
+    }
+
+    input.hotel-search-input{
+        width: 50%;
+    }
+}
 
 
 /* ==========================================================================
