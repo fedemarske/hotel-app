@@ -1,22 +1,22 @@
-#Hotels App
+# Hotels App
 
-##Description
+## Description
 
 Lista de hoteles. Se puede filtrar por nombre, precio y cantidad de estrellas.
 
-##Requisitos
+## Requisitos
 
 	* Nodejs
 	* NPM
 
-##Instruciones
+## Instruciones
 
 	* Clonar el repositorio.
 	* `npm install` para instalar todas las dependencias.
 	* `npm start` para iniciar la app.
 	* Abrir `localhost:3000` para ver la app.
 
-##Herramientas usadas en la app
+## Herramientas usadas en la app
 
 	* Angularjs 1.6.6
 	* Webpack
@@ -33,7 +33,7 @@ Lista de hoteles. Se puede filtrar por nombre, precio y cantidad de estrellas.
 	* Font-Awesome
 	* Google
 
-##TODO
+## TODO
 
 	* Directiva para filtro de estrellas
 	* Unit test
