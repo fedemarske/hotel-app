@@ -1,11 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="hotelsApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Hotels App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
@@ -16,6 +17,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/nouislider.min.css">
+        <link rel="stylesheet" href="css/rzslider.min.css">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -23,170 +25,12 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="hotels-app-main">
-            <div class="filters-container modifiers-container">
-                <div class="modifiers-title">
-                    <span>Filtrar</span>
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                </div>
-                <div class="modifiers-content">
-                    <div class="filter-container">
-                        <div class="filter-title">
-                            <span><i class="fa fa-search" aria-hidden="true"></i> Nombre de hotel</span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="filter-content">
-                            <input type="text" name="hotel-name-search" id="hotel-name-search" class="hotel-search-input" placeholder="Ingrese el nombre del hotel">
-                            <button class="btn-primary btn-md">Aceptar</button>
-                        </div>
-                    </div>
-
-                    <div class="filter-container">
-                        <div class="filter-title">
-                            <span><i class="fa fa-usd" aria-hidden="true"></i> Precio por noche</span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="filter-content">
-                            <input type="range" id="slider" name="silder-price" class="slider-price">
-                        </div>
-                    </div>
-
-                    <div class="filter-container">
-                        <div class="filter-title">
-                            <span><i class="fa fa-star" aria-hidden="true"></i> Estrellas</span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="filter-content">
-                            <ul class="stars-list">
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <span>Todas las estrellas</span>
-                                    <span>(300)</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>(300)</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>(300)</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>(300)</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>(300)</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="star-hotel">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span>(300)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="list-hotels-container">
-                <div class="order-hotels">
-                    <label>Ordenar</label>
-                    <select>
-                        <option>Mas recientes</option>
-                    </select>
-                </div>
-                <div class="list-hotels">
-                    <div class="hotel-item-container">
-                        <div class="carousel-images-hotel">
-                            <img src="http://via.placeholder.com/250x200" alt="" />
-                        </div>
-                        <div class="hotel-description">
-                            <span><strong>Sarasa</strong></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span class="warning-text"><i class="fa fa-bed" aria-hidden="true"></i> <strong>Solo la habitacion</strong></span>
-                            <span>
-                                <i class="fa fa-glass" aria-hidden="true"></i>
-                                <i class="fa fa-umbrella" aria-hidden="true"></i>
-                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                <i class="fa fa-coffee" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <div class="hotel-price">
-                            <span>Precio por noche por la habitacion</span>
-                            <span class="warning-text price-text">ARS <strong>1540</strong></span>
-                            <span>Impuestos y tasas no incluidos</span>
-                            <button class="btn-primary btn-lg">Ver Hotel</button>
-                            <span><strong>Paga en cuotas</strong></span>
-                            <span><strong>Paga en destino</strong></span>
-                        </div>
-                    </div>
-
-                    <div class="hotel-item-container">
-                        <div class="carousel-images-hotel">
-                            <img src="http://via.placeholder.com/250x200" alt="" />
-                        </div>
-                        <div class="hotel-description">
-                            <span><strong>Sarasa</strong></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span class="warning-text"><i class="fa fa-bed" aria-hidden="true"></i> Solo la habitacion</span>
-                            <span>
-                                <i class="fa fa-glass" aria-hidden="true"></i>
-                                <i class="fa fa-umbrella" aria-hidden="true"></i>
-                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                <i class="fa fa-coffee" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <div class="hotel-price">
-                            <span>Precio por noche por la habitacion</span>
-                            <span class="warning-text price-text">ARS <strong>1540</strong></span>
-                            <span>Impuestos y tasas no incluidos</span>
-                            <button class="btn-primary btn-lg">Ver Hotel</button>
-                            <span><strong>Paga en cuotas</strong></span>
-                            <span><strong>Paga en destino</strong></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ui-view class="hotels-app-main"></ui-view>
 
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/vendor/nouislider.js"></script>
-        <script src="js/main.js"></script>
-
-        <script>
-            $(document).ready(function(){
-                var slider = document.getElementById('slider');
-                console.log(slider)
-
-                noUiSlider.create(slider, {
-                    start: [20, 80],
-                    tooltips: true,
-                    range: {
-                        'min': 0,
-                        'max': 100
-                    }
-                });
-            })
-        </script>
+        <script src="js/bundle.js"></script>
     </body>
 </html>

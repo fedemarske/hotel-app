@@ -1,0 +1,81 @@
+<div class="filters-container modifiers-container">
+    <div class="modifiers-title">
+        <span>Filtrar</span>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </div>
+    <div class="modifiers-content">
+        <div class="filter-container">
+            <div class="filter-title">
+                <span><i class="fa fa-search" aria-hidden="true"></i> Nombre de hotel</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div class="filter-content">
+                <input type="text" name="hotel-name-search" ng-model="home.hotelName" id="hotel-name-search" class="hotel-search-input" placeholder="Ingrese el nombre del hotel">
+                <button class="btn-primary btn-md">Aceptar</button>
+            </div>
+        </div>
+
+        <div class="filter-container">
+            <div class="filter-title">
+                <span><i class="fa fa-usd" aria-hidden="true"></i> Precio por noche</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <rzslider   rz-slider-model="home.slider.min"
+                        rz-slider-high="home.slider.max"
+                        rz-slider-options="home.slider.options"></rzslider>
+        </div>
+
+        <div class="filter-container">
+            <div class="filter-title">
+                <span><i class="fa fa-star" aria-hidden="true"></i> Estrellas</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div class="filter-content">
+                <ul class="stars-list">
+                    <li ng-repeat="star in home.stars">
+                        <input type="checkbox" ng-disabled="star.all" name="star-hotel" ng-model="star.checked">
+                        <span ng-if="star.all">Todas las estrellas</span>
+                        <span><i class="fa fa-star" aria-hidden="true" ng-repeat="starIco in home.range(star.value) track by $index"></i><span>
+                        <span>({{star.quantity}})</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="list-hotels-container">
+    <div class="order-hotels">
+        <label>Ordenar</label>
+        <select>
+            <option>Mas recientes</option>
+        </select>
+    </div>
+    <div class="list-hotels">
+        <div    class="hotel-item-container" 
+                ng-repeat="hotel in home.hotels | filter:home.hotelName | rangeFilter:home.slider.min:home.slider.max | starsFilter:home.stars">
+            <div class="carousel-images-hotel">
+                <img src="http://via.placeholder.com/250x200" alt="" />
+            </div>
+            <div class="hotel-description">
+                <span><strong>{{hotel.name}}</strong></span>
+                <span><i class="fa fa-star" aria-hidden="true" ng-repeat="star in home.range(hotel.stars) track by $index"></i></span>
+                <span class="warning-text"><i class="fa fa-bed" aria-hidden="true"></i> <strong>Solo la habitacion</strong></span>
+                <span>
+                    <i class="fa fa-glass" aria-hidden="true"></i>
+                    <i class="fa fa-umbrella" aria-hidden="true"></i>
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-coffee" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="hotel-price">
+                <span>Precio por noche por la habitacion</span>
+                <span class="warning-text price-text">ARS <strong>{{hotel.price}}</strong></span>
+                <span>Impuestos y tasas no incluidos</span>
+                <button class="btn-primary btn-lg">Ver Hotel</button>
+                <span><strong>Paga en cuotas</strong></span>
+                <span><strong>Paga en destino</strong></span>
+            </div>
+        </div>
+    </div>
+</div>

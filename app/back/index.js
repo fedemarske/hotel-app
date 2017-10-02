@@ -6,7 +6,7 @@ var HotelController = require('./controllers/HotelController.js')
 App.use(express.static(__dirname + '/../../public'))
 
 App.get('/hotels', function (req, res) {
-	res.json(HotelController.getHotels())
+	HotelController.getHotels(res)
 })
 
 App.get('*', function(req, res) {

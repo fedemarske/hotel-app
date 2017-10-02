@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "App to show and filter hotels",
   "scripts": {
-    "start": "nodemon app/back/index.js"
+    "start": "nodemon app/back/index.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-ui-router": "^1.0.3",
+    "babel-loader": "^7.1.2",
     "express": "^4.15.5",
-    "nodemon": "^1.12.1"
+    "file-loader": "^1.1.4",
+    "ng-range-slider": "^0.2.0",
+    "nodemon": "^1.12.1",
+    "raw-loader": "^0.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -2,7 +2,7 @@ var reader = require('fs'),
 	HotelController = {};
 
 
-HotelController.getHotels = function(){
+HotelController.getHotels = function(cb){
 	var urlFile = './data.json',
 		encoding = 'utf8';
 
@@ -11,7 +11,7 @@ HotelController.getHotels = function(){
 			console.log("Something went wrong")
 		}else{
 			console.log("All good")
-			return data
+			cb.json(JSON.parse(data))
 		}
 	})
 }
