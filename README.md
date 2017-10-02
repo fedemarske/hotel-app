@@ -48,4 +48,5 @@ ir a [http://localhost:3000](http://localhost:3000) en el browser.
 
 * Directiva para filtro de estrellas
 * Unit test
+* ESLint
 
