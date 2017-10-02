@@ -10,6 +10,8 @@ class hotelService {
   }
 }
 
+hotelService.$inject = ['$http']
+
 export default angular.module('services.hotels', [])
   .service('hotelService', hotelService)
   .name;

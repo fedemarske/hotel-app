@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     context: __dirname,
     entry: './app/front/app.js',
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     output: {
         path: path.join(__dirname, '/public/js'),
         filename: 'bundle.js'
